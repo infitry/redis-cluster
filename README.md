@@ -2,7 +2,7 @@
 
 ---
 
-- dockerc-compose/redis-cluster.yml 을 실행하여 레디스 컨테이너를 실행 합니다.
+- dockerc-compose/redis-cluster.yml 를 실행하여 레디스 컨테이너를 실행 합니다.
 
 - 다음 명령어를 실행하여 cluster 구성을 완료 합니다.
 ``` linux
