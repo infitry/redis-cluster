@@ -14,12 +14,12 @@ public class RedisTestController {
     private final RedisService redisService;
 
     @GetMapping("/string/{id}")
-    public Object doSortedSetTest(@PathVariable String id) {
+    public Object getString(@PathVariable String id) {
         return redisService.get(id);
     }
 
     @GetMapping("/string/batch")
-    public void doStringTest() {
+    public void saveBulkString() {
         redisService.batchSet();
     }
 }
