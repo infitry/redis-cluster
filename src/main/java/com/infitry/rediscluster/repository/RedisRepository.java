@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @Service
@@ -21,6 +23,14 @@ public class RedisRepository {
 
     public void delete(String key) {
         redisTemplate.delete(key);
+    }
+
+    public void multiSet(Map<String, Object> map) {
+        redisTemplate.opsForValue().multiSet(map);
+    }
+
+    public List<Object> multiGet(List<String> keys) {
+        return redisTemplate.opsForValue().multiGet(keys);
     }
 
     public void setSortedSet(String key, Object value, double score) {
