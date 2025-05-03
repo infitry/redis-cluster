@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: redis-cluster
+  data:
+    redis:
+      cluster:
+        nodes:
+          - 192.168.0.110:6379
+          - 192.168.0.110:6380
+          - 192.168.0.110:6381
+          - 192.168.0.110:6382
+          - 192.168.0.110:6383
+          - 192.168.0.110:6384
+        max-redirects: 5
