@@ -19,7 +19,7 @@ public class AsyncConfig {
         executor.setQueueCapacity(20000);
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
         executor.setThreadNamePrefix("Async-");
-//        executor.setVirtualThreads(true);
+        executor.setVirtualThreads(true);
         executor.initialize();
         return executor;
     }
