@@ -15,7 +15,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.util.Assert;
 
 import java.time.Duration;
 
@@ -32,7 +31,7 @@ public class RedisConfig {
 
         // topology refresh option
         var topologyRefreshOptions = ClusterTopologyRefreshOptions.builder()
-                .enablePeriodicRefresh(Duration.ofSeconds(60))
+                .enablePeriodicRefresh(Duration.ofSeconds(60)) // 주기적으로 토폴로지 정보를 새로고침하여 얻어온다.
                 .enableAllAdaptiveRefreshTriggers() // 모든 refresh 이벤트에 대해 토폴로지 갱신을 실행한다.
                 .adaptiveRefreshTriggersTimeout(Duration.ofSeconds(30))
                 .build();
